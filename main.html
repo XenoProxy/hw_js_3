@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HW3</title>
+</head>
+<body>
+    <script>
+        //----------1
+        let a = 0;
+        let b = 35;
+        do{
+            console.log(a++)
+        } while(a <= 50);
+        do{
+            console.log(b--)
+        } while(b >= 8);
+
+        //----------2
+        let c = 89;
+        while (c >= 11){
+            document.write(c + '<br/>');
+            c--;
+        }
+
+        //----------3
+        let sum = 0;
+        for(let i = 0; i < 101; i++){
+            sum += i;
+        }
+        console.log(sum);
+
+        //----------4
+        let d = 0;
+        for(let i = 0; i < 6; i++){
+            d += i;
+            console.log(d);
+        }
+        
+        //----------5
+        for(let i = 8; i < 57; i++){
+            if(i % 2 == 0){
+                console.log(i);
+            }
+        }
+
+        let i = 8;
+        while(i <= 56){
+            if(i % 2 == 0){
+                console.log(i);
+            }
+            i++ ;
+        }
+
+        //----------6
+        for(let i = 2; i < 11; i++){
+            for(let y = 1; y < 11; y++){
+                console.log(i * y);
+            }
+        }
+
+        //----------7
+        let n = 1000;
+        let num = 0;
+        while(n > 50){
+            n = n / 2;
+            num++ ;
+        }        
+        console.log(num);
+
+        //----------8 !!!!
+        let str
+        while (true){
+            str = prompt(`Введите число не равное 0`);
+            // if(typeof str != inte){
+            //     alert('Строка должна состоять только из цифр!');
+            //     continue;
+            // }
+            if(str != '' || str != 0){
+                break;
+            } 
+        }
+
+        // сумма цифр
+        let len = str.length;
+        sum = 0;
+        for(let i = 0; i < len; i++){
+            sum += +str[i];            
+        }
+        console.log('Сумма: ' + sum)
+
+        // среднее арифметическое
+        console.log(sum / len);
+
+
+        //----------9
+        let num_str = '4 98 4 6 1 32 4 65 4 3 5 7 89 7 10 1 36 8 57';
+        let num_arr = num_str.split(' ').map(Number);
+        let min = num_arr[0];
+        let max = num_arr[0];
+
+        for(let i = 0; i < num_arr.length - 1; i++){
+            if(min > num_arr[i + 1]){
+                min = num_arr[i + 1]
+            }
+        }
+        console.log('Min: ' + min);
+
+        for(let i = 0; i < num_arr.length - 1; i++){
+            if(max < num_arr[i + 1]){
+                max = num_arr[i + 1]
+            }
+        }
+        console.log('Max: ' + max);
+
+        //----------10
+        n = prompt('Введите целое число');
+        len = n.length;
+
+        // разбивание на цифры
+        for(let i = 0; i < len; i++){
+            console.log(`Цифра №${i}: ` + n[i])
+        }
+
+        // кол-во цифр
+        console.log('Кол-во цифр:' +  len);
+
+        // сумма цифр
+        sum = 0;
+        for(let i = 0; i < len; i++){
+            sum += +n[i];            
+        }
+        console.log('Сумма: ' + sum)
+
+        //реверс
+        let n_rev = []
+        for(let i = len - 1; i > -1; i--){
+            n_rev.push(n[i]);
+        }
+        let n_str = n_rev.join('');
+        console.log('Изначальное число: ' + n);
+        console.log('Реверс: ' + n_str);
+    </script>
+</body>
+</html>
